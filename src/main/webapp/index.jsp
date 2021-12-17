@@ -44,7 +44,7 @@
     	</div>    
     	</form>
     	
-   	
+  		<strong>
     	<%
     	
     		String error = (String) request.getAttribute("error");
@@ -61,7 +61,11 @@
     		out.println(mensaje);
 		    	
     	%>
+    	</strong>
     	
+    		<br>
+    		<br>
+    	    <a href="detalles.jsp">Ver detalle de los sabores</a>
     </div>
   </body>
 </html>
