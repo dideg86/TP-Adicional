@@ -1,7 +1,7 @@
 package ap;
 
 import java.io.IOException;
-
+import java.util.Objects;
 import jakarta.servlet.Servlet;
 import jakarta.servlet.ServletConfig;
 import jakarta.servlet.ServletException;
@@ -32,18 +32,33 @@ public class PizzeriaServlet extends HttpServlet implements Servlet {
 		String nombre;
 		String error = "";
 		String mensaje = "";
+		String pizza;
+		String muzzarella = "Muzzarella";
+		String napolitana = "Napolitana";
+		String jamon = "Jamon";
+		String fugazzeta = "Fugazzeta";
+		String calabresa = "Calabresa";
+		
 		
 		try {
-			nombre = valor1; 
-			if (nombre == "") {
+			nombre = valor1;
+			pizza = valor2;
+			if (nombre != "" && Objects.equals(pizza, muzzarella)) {
+				mensaje = "Hola " +valor1+"!,"+" veo que te gusta la pizza de "+valor2+" (salsa y queso muzzarella)";
+			} else if (nombre != "" && Objects.equals(pizza, napolitana)){
+				mensaje = "Hola " +valor1+"!,"+" veo que te gusta la pizza de "+valor2+" (salsa, queso muzzarella y tomate)";
+			} else if (nombre != "" && Objects.equals(pizza, jamon)) {
+				mensaje = "Hola " +valor1+"!,"+" veo que te gusta la pizza de "+valor2+" (salsa, queso muzzarella y jamon)";				
+			} else if (nombre != "" && Objects.equals(pizza, fugazzeta)) {
+				mensaje = "Hola " +valor1+"!,"+" veo que te gusta la pizza de "+valor2+" (queso muzzarella y cebolla)";				
+			} else if (nombre != "" && Objects.equals(pizza, calabresa)) {
+				mensaje = "Hola " +valor1+"!,"+" veo que te gusta la pizza de "+valor2+" (salsa, queso muzzarella y longaniza)";				
+			} else if (nombre == "") {
 				error = "Error, tu nombre no puede estar vacio";
-			} else {
-				mensaje = "Hola " +valor1+","+" veo que te gusta la pizza de "+valor2+".";
 			}
 		} catch (Exception e) {
 			error = "Datos incorrectos";
-	}
-
+	} 
 		
 		if (error.isEmpty()) {
 			request.setAttribute("mensaje", mensaje);

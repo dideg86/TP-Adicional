@@ -14,10 +14,11 @@
     
     <div class="container">
     	<div class="jumbotron">
-    		<h1>Pizzeria R2-D2</h1>
-    		<h3>TP Adicional - Diego Javier Degracia</h3>
+    		<center><strong><h1>Bienvenido a Pizzeria</strong></h1>
+    		<img src="https://www.pinclipart.com/picdir/big/85-850231_1-of-star-wars-r2d2-logo-clipart.png"> 
+    		<h3><i>TP Adicional - por Diego Javier Degracia</i></h3> </center>
     	</div>
-    	
+    	<br>
     	<form action="pizzeria" method="post">
     	<div class="thumbnail">
     		<input type="text" name="nombre" placeholder="Ingresa tu nombre"
@@ -39,9 +40,11 @@
     				class="form-control btn btn-primary"/>
     		<br>
     		<br>
+    		
     	</div>    
     	</form>
     	
+   	
     	<%
     	
     		String error = (String) request.getAttribute("error");
@@ -56,8 +59,7 @@
 
     		out.println(error);
     		out.println(mensaje);
-
-    	
+		    	
     	%>
     	
     </div>
