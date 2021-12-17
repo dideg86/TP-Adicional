@@ -20,11 +20,20 @@
     	
     	<form action="pizzeria" method="post">
     	<div class="thumbnail">
-    		<input type="text" name="nombre" placeholder="Tu nombre"
+    		<input type="text" name="nombre" placeholder="Ingresa tu nombre"
     				class="form-control"/>
     		<br>
-    		<input type="text" name="pizza" placeholder="Pizza elegida"
-    				class="form-control"/>
+    		<select name="pizza">
+    			<option>Muzzarella </option>
+    			<option>Napolitana </option>
+    			<option>Jamon </option>
+    			<option>Fugazzeta </option>
+    			<option>Calabresa </option>
+    		</select>
+    		<small id="text" class="text-muted visible">
+            Elige la pizza deseada.
+            </small>
+    		<br>
     		<br>
     		<input type="submit" name="bt" value="Enviar"
     				class="form-control btn btn-primary"/>
@@ -44,9 +53,10 @@
     		if (mensaje == null) {
     			mensaje = "";
     		}
-    		
+
     		out.println(error);
     		out.println(mensaje);
+
     	
     	%>
     	

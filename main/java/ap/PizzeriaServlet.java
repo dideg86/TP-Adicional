@@ -38,13 +38,13 @@ public class PizzeriaServlet extends HttpServlet implements Servlet {
 			if (nombre == "") {
 				error = "Error, tu nombre no puede estar vacio";
 			} else {
-				mensaje = "Hola " +valor1+","+" veo que te gusta la pizza de "+valor2;
-				mensaje = "Hola " +valor1+","+" veo que te gusta la pizza de "+valor2;
+				mensaje = "Hola " +valor1+","+" veo que te gusta la pizza de "+valor2+".";
 			}
 		} catch (Exception e) {
 			error = "Datos incorrectos";
-		
 	}
+
+		
 		if (error.isEmpty()) {
 			request.setAttribute("mensaje", mensaje);
 			
