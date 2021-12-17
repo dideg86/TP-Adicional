@@ -8,28 +8,48 @@
 
 	<script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
-    <title>Bootstrap!</title>
+    <title>TP Adicional!</title>
   </head>
   <body>
     
     <div class="container">
     	<div class="jumbotron">
-    		<h1>TP Adicional - Diego Javier Degracia</h1>
-    		<h3>Pizzería R2-D2</h3>
+    		<h1>Pizzeria R2-D2</h1>
+    		<h3>TP Adicional - Diego Javier Degracia</h3>
     	</div>
     	
-    	<form action="control.do" method="post">
+    	<form action="pizzeria" method="post">
     	<div class="thumbnail">
     		<input type="text" name="nombre" placeholder="Tu nombre"
     				class="form-control"/>
     		<br>
-    		<input type="text" name="edad" placeholder="Tu edad"
+    		<input type="text" name="pizza" placeholder="Pizza elegida"
     				class="form-control"/>
     		<br>
-    		<input type="submit" name="bt" value="Prueba"
+    		<input type="submit" name="bt" value="Enviar"
     				class="form-control btn btn-primary"/>
+    		<br>
+    		<br>
     	</div>    
     	</form>
+    	
+    	<%
+    	
+    		String error = (String) request.getAttribute("error");
+    		String mensaje = (String) request.getAttribute("mensaje");
+    		
+    		if (error == null) {
+    			error = "";
+    		}
+    		if (mensaje == null) {
+    			mensaje = "";
+    		}
+    		
+    		out.println(error);
+    		out.println(mensaje);
+    	
+    	%>
+    	
     </div>
   </body>
 </html>
